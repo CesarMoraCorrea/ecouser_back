@@ -1,6 +1,14 @@
 {
+  "version": 2,
+  "name": "user-server",
   "functions": {
-    "api/index.js": { "runtime": "nodejs20.x" }
+    "api/servidor.js": {
+      "runtime": "nodejs20.x",
+      "maxDuration": 30
+    }
   },
-  "routes": [{ "src": "/api/(.*)", "dest": "/api/index.js" }]
+  "routes": [{ "src": "/(.*)", "dest": "/api/servidor.js" }],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
